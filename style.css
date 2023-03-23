@@ -25,28 +25,25 @@ body {
         rgb(219, 144, 157) 30%,
         rgb(255, 226, 231) 30%
      );
+     display: grid;
+     grid-template-columns: 3fr 5fr;
+     grid-template-areas: 
+     "areaLeft areaRight";
    
     
 }
-/*
-background-color: rgb(255, 226, 231);
- background-color: rgb(183, 211, 183);
-repeating-linear-gradient(
-        to right,
-        white,
-        white 10px,
-        rgb(196, 196, 240) 10px,
-        rgb(196, 196, 240) 12px
-        );
-        */
+
        
 .left-section{
     background-color: white;
-    margin-top: 10%;
+    margin-top: 20%;
     margin-left: 6%;
+    margin-bottom: auto;
     padding: 1rem 2rem;
-    display: flex;
-    display: inline-block;
+    grid-area: "areaLeft";
+    border: solid;
+    border-color: white;
+    border-width: 2px;
 }
 .personal-info-base {
     width: 100%;
@@ -74,20 +71,26 @@ repeating-linear-gradient(
 .contact-info {
     color: rgb(161, 66, 82);
     text-align: left;
+    display: inline-block;
 }
 .contact-info ul li {
     margin-bottom: 1rem;
 }
 .qrcode {
     display: inline-block;
+    width: 18%;
+}
+.qrcode img{
+    width: 100%;
+    margin-left: 2.5rem;
+    
 }
 
 .right-section {
-    width: 48%;
     padding: 1rem 1rem;
     margin-top: 10%;
-    margin-left: 5%;
-    display: inline-block;
+    margin-left: 1.2rem;
+    grid-area: "areaRight";
     vertical-align: top;
     border-left: solid;
     border-left-width: 2px;
@@ -163,3 +166,14 @@ repeating-linear-gradient(
 .Divine {
     width: 98%;
 }
+
+@media only screen and (max-width: 650px){
+    .main-content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr;
+        grid-template-areas: 
+        "areaLeft"
+        "areaRight";
+    }
+}
+    
